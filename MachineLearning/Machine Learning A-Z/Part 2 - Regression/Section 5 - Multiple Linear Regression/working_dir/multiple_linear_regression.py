@@ -72,6 +72,9 @@ regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
 regressor_OLS.summary()
 
 
+# This isn't the optimal model due to Adjusted R^2 Criterion. 
+# We 'll prefer the previous model although the p-value of 
+# column 5 is greater than the threshold (~ 0.06 > 0.05 = p)
 X_opt = X[:, [0, 3]]
 regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
 # Creates the summary of data

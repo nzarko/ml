@@ -1,4 +1,4 @@
-# SVR
+# Regression Template
 
 # Importing the libraries
 import numpy as np
@@ -9,42 +9,33 @@ import pandas as pd
 dataset = pd.read_csv('Position_Salaries.csv')
 X = dataset.iloc[:, 1:2].values
 y = dataset.iloc[:, 2].values
-y = np.reshape(y,(-1,1))
 
 # Splitting the dataset into the Training set and Test set
 """from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)"""
 
 # Feature Scaling
-from sklearn.preprocessing import StandardScaler
+"""from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
+X_train = sc_X.fit_transform(X_train)
+X_test = sc_X.transform(X_test)
 sc_y = StandardScaler()
-X = sc_X.fit_transform(X)
-y = sc_y.fit_transform(y)
+y_train = sc_y.fit_transform(y_train)"""
 
-# Fitting SVR to the dataset
-from sklearn.svm import SVR
-regressor = SVR(kernel = 'rbf')
+# Fitting the Regression Model to the dataset
+from sklearn.ensemble import RandomForestRegressor
+regressor = RandomForestRegressor(n_estimators=300,random_state = 0)
 regressor.fit(X, y)
-
 # Predicting a new result
-y_pred = regressor.predict(np.array([[6.5]]).reshape(-1,1))
-y_pred = sc_y.inverse_transform(y_pred)
+y_pred = regressor.predict(6.5)
 
-# Visualising the SVR results
-plt.scatter(X, y, color = 'red')
-plt.plot(X, regressor.predict(X), color = 'blue')
-plt.title('Truth or Bluff (SVR)')
-plt.xlabel('Position level')
-plt.ylabel('Salary')
-plt.show()
 
-# Visualising the SVR results (for higher resolution and smoother curve)
-X_grid = np.arange(min(X), max(X), 0.01) # choice of 0.01 instead of 0.1 step because the data is feature scaled
+# Visualising the Random Forest Regression results (for higher resolution and smoother curve)
+X_grid = np.arange(min(X), max(X), 0.01)
 X_grid = X_grid.reshape((len(X_grid), 1))
 plt.scatter(X, y, color = 'red')
 plt.plot(X_grid, regressor.predict(X_grid), color = 'blue')
-plt.title('Truth or Bluff (SVR)')
+plt.title('Truth or Bluff (Random Forest Regression Model)')
 plt.xlabel('Position level')
 plt.ylabel('Salary')
 plt.show()
