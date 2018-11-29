@@ -1,0 +1,52 @@
+NLP Logistic Regression Report.
+             precision    recall  f1-score   support
+
+          0       0.67      0.78      0.72        97
+          1       0.76      0.64      0.69       103
+
+avg / total       0.72      0.71      0.71       200
+Average Precision Test :  0.6711064613324406
+
+                NLP K-NN Report.
+             precision    recall  f1-score   support
+
+          0       0.57      0.76      0.65        97
+          1       0.68      0.47      0.55       103
+
+avg / total       0.63      0.61      0.60       200
+Average Precision Test :  0.5900553808286613
+
+****NLP SVM Report****
+             precision    recall  f1-score   support
+
+          0       0.69      0.76      0.73        97
+          1       0.75      0.68      0.71       103
+
+avg / total       0.72      0.72      0.72       200
+Average Precision Test :  0.6765356509030169
+
+ **** NLP Kernel SVM Report ****
+             precision    recall  f1-score   support
+
+          0       0.48      1.00      0.65        97
+          1       0.00      0.00      0.00       103
+
+avg / total       0.24      0.48      0.32       200
+
+        **** NLP Decission Tree Report ****
+             precision    recall  f1-score   support
+
+          0       0.68      0.76      0.72        97
+          1       0.75      0.66      0.70       103
+
+avg / total       0.71      0.71      0.71       200
+Average Precision Test :  0.668331910807639
+
+        **** NLP Random Forest Classification Report ****
+             precision    recall  f1-score   support
+
+          0       0.65      0.91      0.76        97
+          1       0.86      0.54      0.67       103
+
+avg / total       0.76      0.72      0.71       200
+Average Precision Test :  0.7034092606422704
