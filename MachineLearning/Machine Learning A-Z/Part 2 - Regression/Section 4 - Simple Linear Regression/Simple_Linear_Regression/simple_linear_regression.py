@@ -6,6 +6,10 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
+import os
+cur_dir = os.getcwd()
+os.chdir(cur_dir)
+print('Current directory : ', cur_dir)
 dataset = pd.read_csv('Salary_Data.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 1].values
