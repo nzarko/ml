@@ -6,6 +6,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
+#import os
+#curdir = os.path.dirname(os.path.realpath('__file__')) + '/'
+#print(curdir)
+#curdir += 'Machine Learning A-Z/Part 1 - Data Preprocessing/'
+#print(curdir)
+#datafile = curdir+'Data.csv'
+#print(datafile)
 dataset = pd.read_csv('Data.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 3].values
